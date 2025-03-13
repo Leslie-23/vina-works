@@ -4,7 +4,7 @@
   "description": "Valuable women community app",
   "main": "index.js",
   "scripts": {
-    "test": "jest --runInBand -forceExit"
+    "test": "jest --runInBand --all --forceExit "
   },
   "keywords": [],
   "author": "Leslie-23",

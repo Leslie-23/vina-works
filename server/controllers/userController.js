@@ -6,6 +6,7 @@ exports.getProfile = async (req, res) => {
     res.json(user);
   } catch (error) {
     res.status(500).json({ message: "Server error" });
+    // res.status(401).json({ message: "Server error" });
   }
 };
 
@@ -21,6 +22,7 @@ exports.updateProfile = async (req, res) => {
       address,
       phone,
       socialLinks,
+      role,
     } = req.body;
 
     // Validate age
@@ -34,11 +36,9 @@ exports.updateProfile = async (req, res) => {
 
     // Validate phone format
     if (!/^\+\d{10,15}$/.test(phone)) {
-      return res
-        .status(400)
-        .json({
-          message: "Phone number must start with '+' and contain 10-15 digits.",
-        });
+      return res.status(400).json({
+        message: "Phone number must start with '+' and contain 10-15 digits.",
+      });
     }
 
     const user = await User.findById(req.user.id);
@@ -53,6 +53,7 @@ exports.updateProfile = async (req, res) => {
     user.address = address || user.address;
     user.phone = phone || user.phone;
     user.socialLinks = socialLinks || user.socialLinks;
+    user.role = role || user.role;
 
     await user.save();
 

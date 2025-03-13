@@ -5,9 +5,11 @@ const app = require("../server"); // Import Express app
 let mongoServer;
 
 beforeAll(async () => {
-  mongoServer = await MongoMemoryServer.create();
-  const mongoUri = mongoServer.getUri();
-  await mongoose.connect(mongoUri);
+  const url = "mongodb://127.0.0.1/test_database";
+  await mongoose.connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 });
 
 afterEach(async () => {
