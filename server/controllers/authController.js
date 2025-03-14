@@ -34,11 +34,9 @@ exports.register = async (req, res) => {
 
     // Validate phone format
     if (!/^\+\d{10,15}$/.test(phone)) {
-      return res
-        .status(400)
-        .json({
-          message: "Phone number must start with '+' and contain 10-15 digits.",
-        });
+      return res.status(400).json({
+        message: "Phone number must start with '+' and contain 10-15 digits.",
+      });
     }
 
     // Hash password
@@ -72,6 +70,7 @@ exports.register = async (req, res) => {
     res
       .status(500)
       .json({ message: "Server error", stack: error.stack, error: error });
+    console.error(error);
   }
 };
 
