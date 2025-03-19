@@ -364,6 +364,7 @@ const HomeDash = () => {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-r from-purple-500 to-blue-500">
+      {/* change tyhe styloing in extram small screen to handle wrapping*/}
       {/* Sidebar */}
       <div
         className={`fixed inset-0 bg-transparent bg-opacity-50 z-40 md:hidden ${
