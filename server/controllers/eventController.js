@@ -12,7 +12,9 @@ exports.createEvent = async (req, res) => {
     });
     res.status(201).json(event);
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    res
+      .status(500)
+      .json({ message: "Server error", stack: error.stack, error });
   }
 };
 

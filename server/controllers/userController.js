@@ -60,6 +60,8 @@ exports.updateProfile = async (req, res) => {
     res.json({ message: "Profile updated successfully", user });
   } catch (error) {
     res.status(500).json({ message: "Server error" });
+    res.status(404).json({ message: "Not found", stack: error.stack });
+    console.error(error);
   }
 };
 

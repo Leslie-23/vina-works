@@ -17,25 +17,30 @@ const Home = () => {
         <section
           className="relative h-screen flex items-center justify-center bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://via.placeholder.com/1920x1080')",
+            backgroundImage: "url('https://placehold.co/1920x1080.')",
           }}
         >
-          <div className="bg-black bg-opacity-50 w-full h-full flex flex-col items-center justify-center text-center px-6">
-            <h1 className="text-white text-5xl md:text-7xl font-bold">
-              Valuable Women Breaking Boundaries
+          <div className="bg-gradient-to-b from bg-purple-500 to-blue-500 bg-opacity-50 w-full h-full flex flex-col items-center justify-center text-center px-6">
+            <h1 className=" text-5xl md:text-7xl sm:text-6xl font-bold bg-gradient-to-r from-[#fff] via-[#fff] to-[#fff] bg-clip-text text-transparent whitespace-nowrap">
+              Valuable Women
+              {/* Breaking Boundaries */}
             </h1>
+            <div className="text-3xl md:text-3xl sm:text-3xl font-bold bg-gradient-to-r from-[#FFE150] via-[#F5BD1F] to-[#FFD93D] bg-clip-text text-transparent">
+              Breaking Boundaries{" "}
+            </div>
+
             <p className="text-white text-lg md:text-xl mt-4 max-w-3xl">
               Encouraging women to develop strengths, achieve goals, and create
               a positive impact.
             </p>
             <div className="mt-6 flex space-x-4">
               <a href="/register">
-                <button className="bg-blue-500 text-white px-6 py-3 text-lg">
-                  Join Now
+                <button className="bg-gradient-to-r from-[#FACB2E] to-[#F5BD1F] text-white px-6 py-3 text-lg cursor-pointer">
+                  <span className=" font-bold ">Join Now</span>
                 </button>
               </a>
               <a href="about">
-                <button className="bg-white text-blue-500 px-6 py-3 text-lg">
+                <button className="bg-white text-blue-500 px-6 py-3 text-lg font-bold cursor-pointer">
                   Learn More
                 </button>
               </a>
@@ -44,38 +49,49 @@ const Home = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gray-100 text-center">
+        <section className="py-16 bg-gray-100 text-center ">
           <section>
             <h2 className="text-4xl font-semibold">
-              Become a Part of Our Movement
+              Become a Part of{" "}
+              <span className="bg-gradient-to-r from-[#F5BD1F] via-[#FFE150] to-[#FFD93D] bg-clip-text text-transparent whitespace-nowrap">
+                Our Movement
+              </span>
             </h2>
             <p className="text-lg text-gray-600 mt-4">
               Join a community that supports, uplifts, and empowers women to
               achieve greatness.
             </p>
-            <button className="mt-6 bg-blue-500 text-white px-6 py-3 text-lg">
-              Sign Up Today <ArrowRight className="ml-2 inline" />
-            </button>
+            <a href="/register">
+              <button className="mt-6 bg-gradient-to-r from bg-purple-500 to-blue-500 text-white px-6 py-3 text-lg cursor-pointer">
+                <span className="bg-gradient-to-r from-[#F5BD1F] via-[#FFE150] to-[#FFD93D] bg-clip-text text-transparent font-bold">
+                  Sign Up Today
+                </span>
+                <ArrowRight className="ml-2 inline text-[#FFE150]" />
+              </button>
+            </a>
           </section>
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-16 text-center bg-white">
+        <section className="py-16 text-center  bg-gradient-to-l from bg-purple-500 to-blue-500">
           <section>
-            <h2 className="text-4xl font-semibold space-x-2 pr-2 pl-2">
+            <h2 className="text-4xl  space-x-2 pr-2 pl-2 bg-gradient-to-r from-[#F5BD1F] via-[#FFE150] to-[#FFD93D] bg-clip-text text-transparent font-bold">
               What Women Are Saying
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 mt-8 pr-2 pl-2">
+            <div className="grid md:grid-cols-3 gap-8 mt-8 pr-2 pl-2  sm:grid-cols-2">
               {[
                 "Amazing support!",
                 "Life-changing experience!",
                 "A true sisterhood!",
+                // "Amazing support!",
+                // "Life-changing experience!",
+                // "A true sisterhood!",
               ].map((quote, index) => (
                 <div
                   key={index}
                   className="bg-gray-100 p-6 rounded-lg shadow mr-2 ml-2"
                 >
-                  <Quote className="text-blue-500 mx-auto" size={32} />
+                  <Quote className="text-blue-500 mx-auto" size={24} />
                   <p className="text-lg italic mt-4">{quote}</p>
                   <p className="text-sm font-semibold mt-2">— Jane Doe</p>
                 </div>
@@ -85,16 +101,19 @@ const Home = () => {
         </section>
 
         {/* Recent Blog Posts */}
-        <section className="py-16 bg-gray-100">
+        <section className="py-16 bg-gradient-to-r from bg-purple-500 to-blue-500">
           <section>
-            <h2 className="text-4xl font-semibold text-center pr-2 pl-2">
+            <h2 className="text-4xl  space-x-2 pr-2 pl-2 bg-gradient-to-r from-[#F5BD1F] via-[#FFE150] to-[#FFD93D] bg-clip-text text-transparent font-bold text-center ">
               Recent Blog Posts
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 mt-8 pr-2 pl-2">
-              {[1, 2, 3].map((post) => (
+            {/* <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+               Gradient Text Styling
+            </h1> */}
+            <div className="grid md:grid-cols-3 gap-8 mt-8 pr-2 pl-2 ">
+              {[1, 2, 3 /*4, 5, 6*/].map((post) => (
                 <div key={post} className="bg-white p-6 rounded-lg shadow">
                   <img
-                    src="https://via.placeholder.com/600x400"
+                    src="https://placehold.co/600x400"
                     alt="Blog"
                     className="rounded-lg"
                   />

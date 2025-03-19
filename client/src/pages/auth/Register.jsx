@@ -120,187 +120,206 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-green-500 to-green-700 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-purple-500 to-blue-500 px-4">
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-8">
-        <h2 className="text-3xl font-bold text-green-600 text-center mb-6">
-          Create an Account
+        <h2 className="text-3xl font-bold text-purple-600 text-center mb-6">
+          Register with Us <hr />
+          <span className="text-sm">Valuable Women</span>
         </h2>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Title Dropdown */}
-          <select
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
-            required
-          >
-            <option value="">Select Title</option>
-            <option value="Mr">Mr</option>
-            <option value="Mrs">Mrs</option>
-            <option value="Ms">Ms</option>
-            <option value="Dr">Dr</option>
-            <option value="Prof">Prof</option>
-          </select>
-
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            placeholder="First Name"
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            placeholder="Last Name"
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email Address"
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-
-          {/* Password Input with Toggle */}
-          <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              value={formData.password}
+        <div className="overflow-y-auto max-h-[70vh] px-8">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Title Dropdown */}
+            <select
+              name="title"
+              value={formData.title}
               onChange={handleChange}
-              placeholder="Set Password"
-              className="w-full p-3 border rounded-lg pr-10"
+              className="w-full p-3 border border-gray-300 rounded-lg  focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+              required
+            >
+              <option value="">Select Title</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Ms">Ms</option>
+              <option value="Dr">Dr</option>
+              <option value="Prof">Prof</option>
+            </select>
+            <div className="grid grid-cols-1  lg:grid-cols- md:grid-cols-2 sm:grid-cols-2  2 gap-6 w-full">
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                placeholder="First Name"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50  "
+                required
+              />
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder="Last Name"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+                required
+              />
+            </div>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email Address"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
               required
             />
-            <button
-              type="button"
-              className="absolute right-3 top-3"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <EyeOff /> : <Eye />}
-            </button>
-          </div>
 
-          {/* Confirm Password Input with Toggle */}
-          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2   lg:grid-cols-2 gap-6 w-full">
+              {/* Password Input with Toggle */}
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  placeholder="Set Password"
+                  className="w-full p-3 border border-gray-300 rounded-lg pr-10 focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+                  required
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-3"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeOff size={18} style={{ color: "gray" }} />
+                  ) : (
+                    <Eye size={18} style={{ color: "green" }} />
+                  )}
+                </button>
+              </div>
+
+              {/* Confirm Password Input with Toggle */}
+              <div className="relative">
+                <input
+                  type={showConfirmPassword ? "text" : "password"}
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  placeholder="Confirm Password"
+                  className="w-full p-3 border border-gray-300 rounded-lg pr-10 focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+                  required
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-3"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? (
+                    <EyeOff size={18} style={{ color: "gray" }} />
+                  ) : (
+                    <Eye size={18} style={{ color: "green" }} />
+                  )}
+                </button>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2   lg:grid-cols-2 gap-6 w-full">
+              {/* Nationality Dropdown */}
+              <select
+                name="nationality"
+                value={formData.nationality}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+                required
+              >
+                <option value="">Select Nationality</option>
+                {africanCountries.map((country) => (
+                  <option key={country.code} value={country.name}>
+                    {country.flag} {country.name}
+                  </option>
+                ))}
+                <option value="Other">Other</option>
+              </select>
+
+              {formData.nationality === "Other" && (
+                <input
+                  type="text"
+                  name="customNationality"
+                  value={formData.customNationality}
+                  onChange={handleChange}
+                  placeholder="Nationality"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+                  required
+                />
+              )}
+
+              {/* Marital Status Dropdown */}
+              <select
+                name="maritalStatus"
+                value={formData.maritalStatus}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+                required
+              >
+                <option value="">Marital Status</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Widowed">Widowed</option>
+              </select>
+            </div>
             <input
-              type={showConfirmPassword ? "text" : "password"}
-              name="confirmPassword"
-              value={formData.confirmPassword}
+              type="date"
+              name="dateOfBirth"
+              value={formData.dateOfBirth}
               onChange={handleChange}
-              placeholder="Confirm Password"
-              className="w-full p-3 border rounded-lg pr-10"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
               required
             />
-            <button
-              type="button"
-              className="absolute right-3 top-3"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            >
-              {showConfirmPassword ? <EyeOff /> : <Eye />}
-            </button>
-          </div>
-
-          {/* Nationality Dropdown */}
-          <select
-            name="nationality"
-            value={formData.nationality}
-            onChange={handleChange}
-            className="w-full p-3 border rounded-lg"
-            required
-          >
-            <option value="">Select Nationality</option>
-            {africanCountries.map((country) => (
-              <option key={country.code} value={country.name}>
-                {country.flag} {country.name}
-              </option>
-            ))}
-            <option value="Other">Other</option>
-          </select>
-
-          {formData.nationality === "Other" && (
             <input
               type="text"
-              name="customNationality"
-              value={formData.customNationality}
+              name="occupation"
+              value={formData.occupation}
               onChange={handleChange}
-              placeholder="Enter your nationality"
-              className="w-full p-3 border rounded-lg"
+              placeholder="Occupation (Max 30 chars)"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+              maxLength="30"
               required
             />
-          )}
-
-          {/* Marital Status Dropdown */}
-          <select
-            name="maritalStatus"
-            value={formData.maritalStatus}
-            onChange={handleChange}
-            className="w-full p-3 border rounded-lg"
-            required
-          >
-            <option value="">Select Marital Status</option>
-            <option value="Single">Single</option>
-            <option value="Married">Married</option>
-            <option value="Divorced">Divorced</option>
-            <option value="Widowed">Widowed</option>
-          </select>
-
-          <input
-            type="date"
-            name="dateOfBirth"
-            value={formData.dateOfBirth}
-            onChange={handleChange}
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-          <input
-            type="text"
-            name="occupation"
-            value={formData.occupation}
-            onChange={handleChange}
-            placeholder="Occupation (Max 30 chars)"
-            className="w-full p-3 border rounded-lg"
-            maxLength="30"
-            required
-          />
-          <input
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            placeholder="Address (Max 50 chars)"
-            className="w-full p-3 border rounded-lg"
-            maxLength="50"
-            required
-          />
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Phone Number (10-15 digits)"
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-
-          <button
-            type="submit"
-            className="w-full bg-green-500 text-white p-3 rounded-lg font-semibold hover:bg-green-600 transition"
-            disabled={isLoading}
-          >
-            {isLoading ? "Signing Up..." : "Sign Up"}
-          </button>
-        </form>
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              placeholder="Address (Max 50 chars)"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+              maxLength="50"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone Number (10-15 digits)"
+              className="w-full p-3 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 "
+              required
+            />
+          </form>
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-purple-500 text-white p-3 rounded-lg font-semibold hover:bg-purple-600 transition"
+          disabled={isLoading}
+          onClick={handleSubmit}
+        >
+          {isLoading ? "Signing Up..." : "Sign Up"}
+        </button>
+        <p className="text-center text-sm text-gray-600 mt-4">
+          Do you have an account?{" "}
+          <a href="/login" className="text-[#A855F7] hover:underline">
+            Login Here
+          </a>
+        </p>
       </div>
     </div>
   );

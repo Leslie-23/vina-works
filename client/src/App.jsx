@@ -16,6 +16,9 @@ import Register from "./pages/auth/Register";
 import VerifyOTP from "./pages/auth/VerifyOTP";
 
 import HomeDash from "./pages/dashboard/HomeDash";
+import NotFound from "./pages/utility/NotFound";
+import ProfileMe from "./pages/dashboard/ProfileMe";
+import Settings from "./pages/user/Settings";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,9 +38,12 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/home" element={<Home />} />
           <Route path="/news" element={<News />} />
+          <Route path="/profile" element={<ProfileMe />} />
           <Route path="/single-blog" element={<SingleBlog />} />
           <Route path="/single-event" element={<SingleEvent />} />
           <Route path="/single-news" element={<SingleNews />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>
     </>

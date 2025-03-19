@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+::selection {
+  background-color: #6a11cb;
+  color: #ffd700; /* Gold Text */
+}

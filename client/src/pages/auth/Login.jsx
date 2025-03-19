@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useLoading } from "../../context/LoadingContext";
 import { toast } from "react-toastify";
 import { Eye, EyeOff } from "lucide-react";
 
@@ -11,7 +10,6 @@ const Login = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const { setIsLoadingAnimator } = useLoading();
   const navigate = useNavigate();
 
   const handleChange = (e) =>
@@ -38,7 +36,6 @@ const Login = () => {
 
     setError("");
     setIsLoading(true);
-    setIsLoadingAnimator(true);
 
     try {
       const { email, password } = credentials;
@@ -58,60 +55,45 @@ const Login = () => {
       toast.error(err.response?.data?.message || "Login failed.");
     } finally {
       setIsLoading(false);
-      setIsLoadingAnimator(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-green-500 to-green-700">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-3xl font-bold text-center text-green-500 mb-6">
-          Login
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-purple-500 to-blue-500 px-4">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-8">
+        <h2 className="text-3xl font-bold text-purple-600 text-center mb-6">
+          Login to Your Account
+          <hr />
+          <span className="text-sm">Valuable Women</span>
         </h2>
 
-        {error && (
-          <p className="text-red-500 text-sm text-center mb-4">{error}</p>
-        )}
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={credentials.email}
-              onChange={handleChange}
-              className="mt-2 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-              required
-            />
-          </div>
+        <form onSubmit={handleSubmit} className="space-y-4 ">
+          <input
+            type="email"
+            name="email"
+            value={credentials.email}
+            onChange={handleChange}
+            placeholder="Email Address"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50"
+            required
+          />
 
-          <div className="mb-6 relative">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Password
-            </label>
+          <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
-              id="password"
               name="password"
               value={credentials.password}
               onChange={handleChange}
-              className="mt-2 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="Password"
+              className="w-full p-3 border border-gray-300 rounded-lg pr-10 focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50"
               required
             />
             <button
               type="button"
+              className="absolute right-3 top-3"
               onClick={togglePasswordVisibility}
-              className="absolute right-2 top-10 text-gray-500 hover:text-gray-700"
             >
               {showPassword ? <EyeOff /> : <Eye />}
             </button>
@@ -119,11 +101,28 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full bg-green-500 text-white p-2 rounded-md hover:bg-green-700 transition"
+            className="w-full bg-[#A855F7] text-white p-3 rounded-lg font-semibold hover:bg-[#9333EA] transition flex items-center justify-center"
             disabled={isLoading}
           >
             {isLoading ? (
-              <div className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto"></div>
+              <>
+                <svg className="w-5 h-5 mr-2 animate-spin" viewBox="0 0 24 24">
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="white"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="white"
+                    d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                  ></path>
+                </svg>
+                Logging in...
+              </>
             ) : (
               "Login"
             )}
@@ -132,8 +131,13 @@ const Login = () => {
 
         <p className="mt-4 text-center text-sm">
           Don't have an account?{" "}
-          <a href="/register" className="text-green-500 hover:underline">
-            Sign Up
+          <a href="/register" className="text-purple-500 hover:underline">
+            Register here
+          </a>
+        </p>
+        <p className="text-center text-sm text-gray-600 mt-4">
+          <a href="/forgot-password" className="text-[#A855F7] hover:underline">
+            Forgot your password?
           </a>
         </p>
       </div>
