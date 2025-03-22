@@ -1,13 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character Set and Viewport -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Valuable Women | Empowering Women Through Mentorship & Education
+    </title>
+    <meta
+      name="title"
+      content="Valuable Women | Empowering Women Through Mentorship & Education"
+    />
+    <meta
+      name="description"
+      content="Valuable Women is a non-profit organization dedicated to empowering young girls and women through mentorship, skill development, and educational opportunities."
+    />
+    <meta
+      name="keywords"
+      content="women empowerment, mentorship, education, skill development, non-profit, women's organization, female leadership"
+    />
+    <meta name="author" content="Valuable Women" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.valuablewomen.org/" />
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#7c3aed" />
+    <meta name="msapplication-TileColor" content="#7c3aed" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.valuablewomen.org/" />
+    <meta
+      property="og:title"
+      content="Valuable Women | Empowering Women Through Mentorship & Education"
+    />
+    <meta
+      property="og:description"
+      content="Join our community dedicated to supporting young girls and women in achieving their dreams through mentorship, skill development, and educational opportunities."
+    />
+    <meta
+      property="og:image"
+      content="https://www.valuablewomen.org/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Valuable Women" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.valuablewomen.org/" />
+    <meta
+      property="twitter:title"
+      content="Valuable Women | Empowering Women Through Mentorship & Education"
+    />
+    <meta
+      property="twitter:description"
+      content="Join our community dedicated to supporting young girls and women in achieving their dreams through mentorship, skill development, and educational opportunities."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.valuablewomen.org/twitter-image.jpg"
+    />
+    <meta name="twitter:creator" content="@valuablewomen" />
+
+    <!-- Preload Critical Resources -->
+    <link
+      rel="preload"
+      href="/fonts/main-font.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/css/critical.css" as="style" />
+    <link rel="preload" href="/js/critical.js" as="script" />
+
+    <!-- Prefetch Non-Critical Resources -->
+    <link rel="prefetch" href="/about.html" />
+    <link rel="prefetch" href="/programs.html" />
+    <link rel="dns-prefetch" href="https://analytics.valuablewomen.org" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Valuable Women",
+        "url": "https://www.valuablewomen.org",
+        "logo": "https://www.valuablewomen.org/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/valuablewomen",
+          "https://www.twitter.com/valuablewomen",
+          "https://www.instagram.com/valuablewomen",
+          "https://www.linkedin.com/company/valuablewomen"
+        ],
+        "description": "Valuable Women is a non-profit organization dedicated to empowering young girls and women through mentorship, skill development, and educational opportunities.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Empowerment Street",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "postalCode": "10001",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-123-456-7890",
+          "contactType": "customer service",
+          "email": "info@valuablewomen.org"
+        }
+      }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Valuable Women",
+        "alternateName": "VW",
+        "url": "https://www.valuablewomen.org",
+        "logo": "https://www.valuablewomen.org/logo.png",
+        "foundingDate": "2013",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Jane Doe"
+          },
+          {
+            "@type": "Person",
+            "name": "Sarah Smith"
+          }
+        ],
+        "description": "A non-profit organization dedicated to empowering women through mentorship and education.",
+        "knowsAbout": [
+          "Women Empowerment",
+          "Mentorship",
+          "Education",
+          "Skill Development"
+        ],
+        "slogan": "Breaking boundaries, empowering women, and transforming lives."
+      }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.valuablewomen.org"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <div id="root"></div>
+
+    <!-- Main content marker for accessibility -->
+    <div id="main-content"></div>
+
+    <!-- Structured data for main content -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Valuable Women - Home",
+        "description": "Valuable Women is a non-profit organization dedicated to empowering young girls and women through mentorship, skill development, and educational opportunities.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Valuable Women",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.valuablewomen.org/logo.png"
+          }
+        },
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Valuable Women"
+        }
+      }
+    </script>
+
+    <!-- Main application script -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Deferred non-critical scripts -->
+    <script src="/js/analytics.js" defer></script>
+
+    <!-- Sitemap reference for search engines -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- Accessibility features -->
+    <script>
+      // Add accessibility enhancements
+      document.addEventListener("DOMContentLoaded", function () {
+        // Focus management
+        const focusableElements = document.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        // Add ARIA attributes where needed
+      });
+    </script>
   </body>
 </html>
