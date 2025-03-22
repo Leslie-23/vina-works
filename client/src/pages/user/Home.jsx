@@ -47,21 +47,24 @@ const Home = () => {
         "Joining Valuable Women transformed my career. The mentorship and support network helped me break through barriers I never thought possible.",
       name: "Sarah Johnson",
       title: "Tech Executive",
-      image: "/placeholder.svg?height=80&width=80",
+      image:
+        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW58ZW58MHx8MHx8fDA%3D",
     },
     {
       quote:
         "The workshops and resources provided by this community gave me the confidence to start my own business. A truly life-changing experience!",
       name: "Michelle Rodriguez",
       title: "Entrepreneur",
-      image: "/placeholder.svg?height=80&width=80",
+      image:
+        "https://images.unsplash.com/photo-1485875437342-9b39470b3d95?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW58ZW58MHx8MHx8fDA%3D",
     },
     {
       quote:
         "I found a true sisterhood here. The connections I've made have supported me through both professional challenges and personal growth.",
       name: "Priya Patel",
       title: "Community Leader",
-      image: "/placeholder.svg?height=80&width=80",
+      image:
+        "https://media.istockphoto.com/id/2171507998/photo/mature-brazilian-woman-enjoying-morning-caf%C3%A9zinho-at-home.webp?a=1&b=1&s=612x612&w=0&k=20&c=oy1fbm9fX1G3JVbrx9kLlcLALNXl-ClB6Eb2UKwCjJo=",
     },
   ];
 
@@ -71,7 +74,8 @@ const Home = () => {
       title: "Empowering Women Through Financial Literacy",
       excerpt:
         "How understanding money management is transforming lives and careers.",
-      image: "/placeholder.svg?height=400&width=600",
+      image:
+        "https://plus.unsplash.com/premium_photo-1663100794696-6b7afa02016c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jaWFsJTIwY291cnNlfGVufDB8fDB8fHww",
       category: "Finance",
       date: "March 15, 2025",
       readTime: "5 min read",
@@ -80,7 +84,8 @@ const Home = () => {
       title: "Breaking the Glass Ceiling: Stories of Triumph",
       excerpt:
         "Inspiring stories from women who've shattered barriers in male-dominated industries.",
-      image: "/placeholder.svg?height=400&width=600",
+      image:
+        "https://images.unsplash.com/photo-1526676537331-7747bf8278fc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZpbmFuY2lhbCUyMGNvdXJzZXxlbnwwfHwwfHx8MA%3D%3D",
       category: "Leadership",
       date: "March 10, 2025",
       readTime: "7 min read",
@@ -89,7 +94,8 @@ const Home = () => {
       title: "The Power of Mentorship in Career Development",
       excerpt:
         "How finding the right mentor can accelerate your professional growth.",
-      image: "/placeholder.svg?height=400&width=600",
+      image:
+        "https://images.unsplash.com/photo-1444653389962-8149286c578a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZpbmFuY2lhbCUyMGNvdXJzZXxlbnwwfHwwfHx8MA%3D%3D",
       category: "Career",
       date: "March 5, 2025",
       readTime: "4 min read",
@@ -473,21 +479,24 @@ const Home = () => {
                   date: "April 15, 2025",
                   time: "10:00 AM - 2:00 PM",
                   location: "Virtual",
-                  image: "/placeholder.svg?height=300&width=500",
+                  image:
+                    "https://media.istockphoto.com/id/1344689279/photo/shot-of-a-group-of-businesspeople-attending-a-conference.webp?a=1&b=1&s=612x612&w=0&k=20&c=66ucQuD8x4OdXLBNFbzUTCGeWgrgvTxJvzyBCh-_jPo=",
                 },
                 {
-                  title: "Networking Mixer",
+                  title: "Training Segments",
                   date: "April 22, 2025",
                   time: "6:00 PM - 8:00 PM",
                   location: "New York, NY",
-                  image: "/placeholder.svg?height=300&width=500",
+                  image:
+                    "https://images.unsplash.com/photo-1637997840847-5e385c00a1a4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWZyaWNhbiUyMHdvcmtzaG9wfGVufDB8fDB8fHww",
                 },
                 {
                   title: "Financial Freedom Summit",
                   date: "May 5-7, 2025",
                   time: "All Day",
                   location: "Chicago, IL",
-                  image: "/placeholder.svg?height=300&width=500",
+                  image:
+                    "https://images.unsplash.com/photo-1640161704729-cbe966a08476?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmluYW5jZSUyMHN1bW1pdHxlbnwwfHwwfHx8MA%3D%3D",
                 },
               ].map((event, index) => (
                 <div
