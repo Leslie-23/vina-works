@@ -2,7 +2,8 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Valuable women community app",
-  "main": "index.js",
+  "main": "server.js",
+  "start": "nodemon server.js",
   "scripts": {
     "test": "jest --runInBand --all --forceExit "
   },

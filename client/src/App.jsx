@@ -19,7 +19,7 @@ import HomeDash from "./pages/dashboard/HomeDash";
 import NotFound from "./pages/utility/NotFound";
 import ProfileMe from "./pages/dashboard/ProfileMe";
 import Settings from "./pages/user/Settings";
-
+import ForgotPassword from "./pages/auth/ForgotPassword";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -31,6 +31,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/verify-otp" element={<VerifyOTP />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/dashboard" element={<HomeDash />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
